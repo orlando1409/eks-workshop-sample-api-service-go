@@ -17,7 +17,8 @@ phases:
   build:
     commands:
         - echo "unique push"
-        - docker build --tag $REPOSITORY_URI:golang1 .
+        - docker pull golang:1.11.1
+        - docker tag golang:1.11.1 $REPOSITORY_URI:golang1
       #- docker build --tag $REPOSITORY_URI:$TAG .
 
   post_build:
